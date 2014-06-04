@@ -1,10 +1,10 @@
 {
    "abstract" : "It's new $module",
    "author" : [
-      "@gmail.com>"
+      "tokubass <tokubass {at} cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v1.1.0, CPAN::Meta::Converter version 2.120921",
+   "generated_by" : "Minilla/v1.1.0, CPAN::Meta::Converter version 2.130880",
    "license" : [
       "perl_5"
    ],
@@ -42,16 +42,24 @@
       },
       "runtime" : {
          "requires" : {
+            "Class::Method::Modifiers" : "0",
+            "Pod::Cpandoc" : "0",
+            "Time::Piece" : "1.16",
             "perl" : "5.008005"
          }
       },
       "test" : {
          "requires" : {
+            "Capture::Tiny" : "0",
+            "File::Temp" : "0",
             "Test::More" : "0.98"
          }
       }
    },
    "release_status" : "unstable",
    "version" : "0.01",
-   "x_authority" : "cpan:TOKUBASS"
+   "x_authority" : "cpan:TOKUBASS",
+   "x_contributors" : [
+      "tokubass <tokubass@cpan.org>"
+   ]
 }
