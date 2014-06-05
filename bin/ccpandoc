@@ -10,7 +10,7 @@ ccpandoc
 
 =head1 DESCRIPTION
 
-See L<Pod::Cpandoc> and L<Pod::Perldoc>.
+See L<Pod::Cpandoc::Cache>
 
 =cut
 

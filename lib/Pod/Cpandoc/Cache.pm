@@ -113,21 +113,37 @@ sub put_cache_file {
 
 
 1;
+
 __END__
 
 =encoding utf-8
 
 =head1 NAME
 
-Pod::Cpandoc::Cache - It's new $module
+ Pod::Cpandoc::Cache - Caching cpandoc
 
 =head1 SYNOPSIS
 
-    use Pod::Cpandoc::Cache;
+ $ ccpandoc Acme::No
+ $ ccpandoc -m Acme::No
+ $ ccpandoc -c Acme::No
+
+ # support Pod::Perldoc::Cache
+ $ ccpandoc -MPod::Perldoc::Cache -w parser=Pod::Text::Color::Delight Acme::No
+
 
 =head1 DESCRIPTION
 
-Pod::Cpandoc::Cache is ...
+Pod::Cpandoc::Cache cache fetched document from CPAN.
+B<TTL is 1day>.
+
+=head1 CONFIGURATION
+
+Pod::Cpandoc::Cache uses F<$HOME/.pod_cpandoc_cache> directory for keeping cache files. By setting the environment variable B<POD_CPANDOC_CACHE_ROOT>, you can select cache directory anywhere you want.
+
+=head1 SEE ALSO
+
+L<Pod::Cpandoc>
 
 =head1 LICENSE
 

@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Caching cpandoc",
    "author" : [
       "tokubass <tokubass {at} cpan.org>"
    ],
@@ -57,6 +57,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/tokubass/p5-Pod-Cpandoc-Cache/issues"
+      },
+      "homepage" : "https://github.com/tokubass/p5-Pod-Cpandoc-Cache",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/tokubass/p5-Pod-Cpandoc-Cache.git",
+         "web" : "https://github.com/tokubass/p5-Pod-Cpandoc-Cache"
+      }
+   },
    "version" : "0.01",
    "x_authority" : "cpan:TOKUBASS",
    "x_contributors" : [
