@@ -64,7 +64,7 @@ sub is_tempfile {
     my $file_name = shift;
     my $module_name = shift;
 
-    my $hyphenated_module_name = sprintf("%s", join('-',split('::',$module_name)) );
+    my $hyphenated_module_name = join '-' => split('::',$module_name);
     $file_name =~ /${hyphenated_module_name}-[a-zA-Z0-9]{4}\.pm\z/;
 }
 
@@ -77,8 +77,8 @@ sub cache_root_dir {
 sub module2path {
     my $self = shift;
     my $module_name = shift;
-    my $cache_file = catfile($self->cache_root_dir,split('::',$module_name)) . '.pm';
-    return $cache_file;
+    my $cache_file_path = catfile($self->cache_root_dir,split('::',$module_name)) . '.pm';
+    return $cache_file_path;
 }
 
 sub put_cache_file {
