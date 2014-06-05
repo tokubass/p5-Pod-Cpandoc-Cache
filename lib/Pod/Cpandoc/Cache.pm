@@ -24,6 +24,23 @@ sub live_cpan_url {
     "http://api.metacpan.org/v0/source/$module";
 }
 
+around 'grand_search_init' => sub {
+    my $orig = shift;
+    my ($self, $module_names) = @_;
+    my $module_name = $module_names->[0];
+
+    if ($self->opt_c) {
+        if ( my $found = $self->search_from_cache($module_name)) {
+            return $found;
+        }
+        my $found = $orig->(@_);
+        $self->put_cache_file($found,$module_name);
+        return $found;
+    }
+
+    $orig->(@_);
+};
+
 around 'searchfor' => sub {
     my $orig = shift;
     my ($self, undef, $module_name) = @_;
@@ -35,7 +52,7 @@ around 'searchfor' => sub {
     my @found = $orig->(@_) or return;
 
     warn "found number: ", scalar @found if DEBUG;
-    warn "found file: " . $found[0] if DEBUG;
+    warn "found file: ", $found[0] if DEBUG;
 
     $self->put_cache_file($found[0],$module_name);
 
@@ -45,7 +62,7 @@ around 'searchfor' => sub {
 sub search_from_cache {
     my $self = shift;
     my $module_name = shift;
-    my $path = $self->module2path($module_name);
+    my $path = $self->module_name_to_path($module_name);
     return unless (-f $path);
 
     my $mtime = (stat($path))[9];
@@ -65,7 +82,7 @@ sub is_tempfile {
     my $module_name = shift;
 
     my $hyphenated_module_name = join '-' => split('::',$module_name);
-    $file_name =~ /${hyphenated_module_name}-[a-zA-Z0-9]{4}\.pm\z/;
+    $file_name =~ /${hyphenated_module_name}-[a-zA-Z0-9]{4}\.(pm|txt)\z/;
 }
 
 sub cache_root_dir {
@@ -74,10 +91,10 @@ sub cache_root_dir {
         $ENV{POD_CPANDOC_CACHE_ROOT} || catdir($ENV{HOME}, '.pod_cpandoc_cache');
 }
 
-sub module2path {
+sub module_name_to_path {
     my $self = shift;
     my $module_name = shift;
-    my $cache_file_path = catfile($self->cache_root_dir,split('::',$module_name)) . '.pm';
+    my $cache_file_path = catfile($self->cache_root_dir,split('::',$module_name)) . ($self->opt_c ? '.txt' : '.pm');
     return $cache_file_path;
 }
 
@@ -87,8 +104,8 @@ sub put_cache_file {
     my $module_name = shift;
 
     if ($self->is_tempfile($tempfile_name,$module_name)) {
-        warn "put cache file: " . $self->module2path($module_name) if DEBUG;
-        my $path = $self->module2path($module_name);
+        my $path = $self->module_name_to_path($module_name);
+        warn "put cache file: $path" if DEBUG;
         mkpath(dirname($path));
         copy($tempfile_name,$path) or die "Copy failed: $!";
     }
