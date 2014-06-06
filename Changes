@@ -2,6 +2,8 @@ Revision history for Perl extension Pod-Cpandoc-Cache
 
 {{$NEXT}}
 
+    - fixbug. script file directory is script/
+
 0.01 2014-06-06T03:10:09Z
 
     - original version
