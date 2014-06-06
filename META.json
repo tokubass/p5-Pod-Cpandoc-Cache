@@ -4,7 +4,7 @@
       "tokubass <tokubass {at} cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v1.1.0, CPAN::Meta::Converter version 2.130880",
+   "generated_by" : "Minilla/v1.1.0, CPAN::Meta::Converter version 2.140640",
    "license" : [
       "perl_5"
    ],
