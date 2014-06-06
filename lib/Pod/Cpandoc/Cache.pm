@@ -11,7 +11,7 @@ use File::Copy;
 use Class::Method::Modifiers;
 use Time::Piece 1.16;
 
-our $VERSION = "0.01";
+our $VERSION = "0.02";
 use constant DEBUG => $ENV{POD_CPANDOC_CACHE_DEBUG};
 use constant TTL => 3600*24;
 
