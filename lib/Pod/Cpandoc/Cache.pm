@@ -83,7 +83,7 @@ sub is_tempfile {
     my $module_name = shift;
 
     my $hyphenated_module_name = join '-' => split('::',$module_name);
-    $file_name =~ /${hyphenated_module_name}-[a-zA-Z0-9]{4}\.(pm|txt)\z/;
+    $file_name =~ /${hyphenated_module_name}-[a-zA-Z0-9_]{4}\.(pm|txt)\z/;
 }
 
 sub cache_root_dir {
