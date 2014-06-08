@@ -2,6 +2,9 @@ Revision history for Perl extension Pod-Cpandoc-Cache
 
 {{$NEXT}}
 
+    - error check when make directory.
+    - add parent.pm in cpanfile
+
 0.02 2014-06-06T04:34:20Z
 
     - fixbug. script file directory is script/
