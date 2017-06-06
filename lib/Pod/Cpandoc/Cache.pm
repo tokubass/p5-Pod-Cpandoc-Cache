@@ -22,7 +22,7 @@ sub live_cpan_url {
     if ($self->opt_c) {
         return $self->SUPER::live_cpan_url($module);
     }
-    "http://api.metacpan.org/v0/source/$module";
+    "https://fastapi.metacpan.org/v1/source/$module";
 }
 
 around 'grand_search_init' => sub {

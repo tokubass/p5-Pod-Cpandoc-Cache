@@ -1,5 +1,5 @@
 requires 'perl', '5.008001';
-requires 'Pod::Cpandoc', '0';
+requires 'Pod::Cpandoc', '0.16';
 requires 'Class::Method::Modifiers','0';
 requires 'Time::Piece', '1.16';
 requires 'parent','0';
