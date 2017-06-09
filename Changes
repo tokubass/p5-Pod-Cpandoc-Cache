@@ -2,6 +2,10 @@ Revision history for Perl extension Pod-Cpandoc-Cache
 
 {{$NEXT}}
 
+0.05 2017-06-09T17:11:40Z
+
+    - update dependent module for SSL
+
 0.04 2017-06-06T13:51:06Z
 
     - Switch to MetaCPAN v1 API, which also requires SSL

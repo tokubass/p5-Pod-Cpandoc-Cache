@@ -4,7 +4,7 @@
       "tokubass <tokubass {at} cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v3.0.9, CPAN::Meta::Converter version 2.143240",
+   "generated_by" : "Minilla/v2.2.1, CPAN::Meta::Converter version 2.141520",
    "license" : [
       "perl_5"
    ],
@@ -43,6 +43,7 @@
       "runtime" : {
          "requires" : {
             "Class::Method::Modifiers" : "0",
+            "HTTP::Tiny" : "0.054",
             "Pod::Cpandoc" : "0.16",
             "Time::Piece" : "1.16",
             "parent" : "0",
@@ -69,7 +70,7 @@
          "web" : "https://github.com/tokubass/p5-Pod-Cpandoc-Cache"
       }
    },
-   "version" : "0.04",
+   "version" : "0.05",
    "x_authority" : "cpan:TOKUBASS",
    "x_contributors" : [
       "tokubass <tokubass@cpan.org>"
