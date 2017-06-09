@@ -3,7 +3,7 @@ requires 'Pod::Cpandoc', '0.16';
 requires 'Class::Method::Modifiers','0';
 requires 'Time::Piece', '1.16';
 requires 'parent','0';
-
+requires 'HTTP::Tiny', '0.054';
 
 on 'test' => sub {
     requires 'Test::More', '0.98';
