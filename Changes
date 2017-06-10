@@ -2,6 +2,10 @@ Revision history for Perl extension Pod-Cpandoc-Cache
 
 {{$NEXT}}
 
+0.06 2017-06-10T14:47:47Z
+
+    - fix test
+
 0.05 2017-06-09T17:11:40Z
 
     - update dependent module for SSL
